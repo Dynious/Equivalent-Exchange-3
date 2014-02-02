@@ -1,5 +1,6 @@
 package com.pahimar.ee3.emc;
 
+import com.pahimar.ee3.api.EnergyStack;
 import com.pahimar.ee3.api.OreStack;
 import com.pahimar.ee3.api.WrappedStack;
 import com.pahimar.ee3.item.ModItems;
@@ -84,7 +85,7 @@ public class EmcValuesDefault
         valueMap.put(new WrappedStack(new ItemStack(Block.stoneBrick, 1, OreDictionary.WILDCARD_VALUE)), new EmcValue(1));
         valueMap.put(new WrappedStack(Block.mycelium), new EmcValue(1));
         valueMap.put(new WrappedStack(Block.whiteStone), new EmcValue(1));
-        valueMap.put(new WrappedStack(Block.hardenedClay), new EmcValue(256));
+        //valueMap.put(new WrappedStack(Block.hardenedClay), new EmcValue(256));
         
         /* Decoration Blocks */
         valueMap.put(new WrappedStack(Block.web), new EmcValue(12));
@@ -125,19 +126,19 @@ public class EmcValuesDefault
         /* Foodstuffs */
         valueMap.put(new WrappedStack(Item.appleRed), new EmcValue(128));
         valueMap.put(new WrappedStack(Item.porkRaw), new EmcValue(64));
-        valueMap.put(new WrappedStack(Item.porkCooked), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.porkCooked), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.fishRaw), new EmcValue(64));
-        valueMap.put(new WrappedStack(Item.fishCooked), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.fishCooked), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.melon), new EmcValue(16));
         valueMap.put(new WrappedStack(Item.beefRaw), new EmcValue(64));
-        valueMap.put(new WrappedStack(Item.beefCooked), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.beefCooked), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.chickenRaw), new EmcValue(64));
-        valueMap.put(new WrappedStack(Item.chickenCooked), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.chickenCooked), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.rottenFlesh), new EmcValue(24));
         valueMap.put(new WrappedStack(Item.spiderEye), new EmcValue(128));
         valueMap.put(new WrappedStack(Item.carrot), new EmcValue(24));
         valueMap.put(new WrappedStack(Item.potato), new EmcValue(24));
-        valueMap.put(new WrappedStack(Item.bakedPotato), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.bakedPotato), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.poisonousPotato), new EmcValue(24));
         
         /* Tools */
@@ -154,7 +155,7 @@ public class EmcValuesDefault
         
         /* Materials */
         valueMap.put(new WrappedStack(new ItemStack(Item.coal, 1, 0)), new EmcValue(32));
-        valueMap.put(new WrappedStack(new ItemStack(Item.coal, 1, 1)), new EmcValue(32));
+        //valueMap.put(new WrappedStack(new ItemStack(Item.coal, 1, 1)), new EmcValue(32));
         valueMap.put(new WrappedStack(Item.diamond), new EmcValue(8192));
         valueMap.put(new WrappedStack(Item.ingotIron), new EmcValue(256));
         valueMap.put(new WrappedStack(Item.ingotGold), new EmcValue(2048));
@@ -165,7 +166,7 @@ public class EmcValuesDefault
         valueMap.put(new WrappedStack(Item.wheat), new EmcValue(24));
         valueMap.put(new WrappedStack(Item.flint), new EmcValue(4));
         valueMap.put(new WrappedStack(Item.leather), new EmcValue(64));
-        valueMap.put(new WrappedStack(Item.brick), new EmcValue(64));
+        //valueMap.put(new WrappedStack(Item.brick), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.clay), new EmcValue(64));
         valueMap.put(new WrappedStack(Item.reed), new EmcValue(32));
         valueMap.put(new WrappedStack(Item.egg), new EmcValue(32));
@@ -175,9 +176,12 @@ public class EmcValuesDefault
         valueMap.put(new WrappedStack(Item.netherStalkSeeds), new EmcValue(24));
         valueMap.put(new WrappedStack(Item.emerald), new EmcValue(8192));
         valueMap.put(new WrappedStack(Item.netherStar), new EmcValue(24576));
-        valueMap.put(new WrappedStack(Item.netherrackBrick), new EmcValue(1));
+        //valueMap.put(new WrappedStack(Item.netherrackBrick), new EmcValue(1));
         valueMap.put(new WrappedStack(Item.netherQuartz), new EmcValue(256));
-        
+
+        /* Energy */
+        valueMap.put(new WrappedStack(new EnergyStack(EnergyStack.VANILLA_SMELTING_ENERGY_NAME)), new EmcValue(valueMap.get(new WrappedStack(new ItemStack(Item.coal, 1, 0))).getValue()/EnergyStack.SMELTING_ENERGY_PER_COAL));
+
         /* Equivalent Exchange 3 */
         /**
          *  Alchemical Dusts

@@ -1,5 +1,6 @@
 package com.pahimar.ee3.addon;
 
+import com.pahimar.ee3.api.EnergyStack;
 import com.pahimar.ee3.api.OreStack;
 import com.pahimar.ee3.api.WrappedStack;
 import com.pahimar.ee3.emc.EmcValue;
@@ -32,6 +33,7 @@ public class AddonIndustrialCraft2
     private static final EmcValue LITHIUM_EMC_VALUE = new EmcValue(512);
     private static final EmcValue SILICON_DIOXIDE_EMC_VALUE = new EmcValue(256);
     private static final EmcValue RUBBER_WOOD_EMC_VALUE = new EmcValue(24);
+    private static final EmcValue ENERGY_UNIT_VALUE = new EmcValue(EnergyStack.getCoalValue()/EnergyStack.ENERGY_UNITS_PER_COAL);
 
     public static void init()
     {
@@ -193,6 +195,7 @@ public class AddonIndustrialCraft2
         AddonHandler.sendPreValueAssignment(new OreStack("dustLithium"), LITHIUM_EMC_VALUE);
         AddonHandler.sendPreValueAssignment(new OreStack("dustSiliconDioxide"), SILICON_DIOXIDE_EMC_VALUE);
         AddonHandler.sendPreValueAssignment(new OreStack("woodRubber"), RUBBER_WOOD_EMC_VALUE);
+        AddonHandler.sendPreValueAssignment(new EnergyStack(EnergyStack.IC2_ENERGY_NAME), ENERGY_UNIT_VALUE);
     }
 
     private static void addPostAssignmentEmcValues()

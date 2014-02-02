@@ -49,6 +49,18 @@ public class RecipeRegistry
             }
         }
 
+        // Add furnace recipes
+        for (WrappedStack outputStack : RecipesSmelting.getSmeltingRecipes().keySet())
+        {
+            for (List<WrappedStack> inputStacks : RecipesSmelting.getSmeltingRecipes().get(outputStack))
+            {
+                if (!recipeMap.get(outputStack).contains(inputStacks))
+                {
+                    recipeMap.put(outputStack, inputStacks);
+                }
+            }
+        }
+
         // Add fluid container recipes
         for (WrappedStack outputStack : RecipesFluidContainers.getFluidContainerRecipes().keySet())
         {
